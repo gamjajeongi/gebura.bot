@@ -710,7 +710,12 @@ async def send_daily_reward_message(ctx, member, result):
         "그 정도는 해낼 줄 알았다.",
     ]
     await ctx.send(
-        f"**일일 퀘스트 완료 - {member.display_name}**
+        await ctx.send(
+    f"**일일 퀘스트 완료 - {member.display_name}**\n"
+    f"{random.choice(complete_lines)}\n"
+    f"보상: HP +{reward.get('hp', 0)}, ATK +{reward.get('atk', 0)}, AGI +{reward.get('agi', 0)}\n"
+    f"호감도: {affinity} ({affinity_tier_name(affinity)})"
+)
 "
         f"{random.choice(complete_lines)}
 "
