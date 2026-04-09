@@ -716,7 +716,6 @@ async def send_daily_reward_message(ctx, member, result):
     f"보상: HP +{reward.get('hp', 0)}, ATK +{reward.get('atk', 0)}, AGI +{reward.get('agi', 0)}\n"
     f"호감도: {affinity} ({affinity_tier_name(affinity)})"
 )
-"
         f"{random.choice(complete_lines)}
 "
         f"보상: HP +{reward.get('hp', 0)}, ATK +{reward.get('atk', 0)}, AGI +{reward.get('agi', 0)}
