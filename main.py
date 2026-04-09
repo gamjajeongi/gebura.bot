@@ -702,27 +702,25 @@ async def check_and_send_daily_completion(ctx, user_id: int):
 async def send_daily_reward_message(ctx, member, result):
     if not result:
         return
+
     reward = result["reward"]
     affinity = result["affinity"]
+
     complete_lines = [
         "오늘 할 일은 제대로 했군.",
         "끝내고 왔군. 좋다.",
-        "그 정도는 해낼 줄 알았다.",
+        "그 정도는 해낼 줄 알았다."
     ]
-    await ctx.send(
-        await ctx.send(
-    f"**일일 퀘스트 완료 - {member.display_name}**\n"
-    f"{random.choice(complete_lines)}\n"
-    f"보상: HP +{reward.get('hp', 0)}, ATK +{reward.get('atk', 0)}, AGI +{reward.get('agi', 0)}\n"
-    f"호감도: {affinity} ({affinity_tier_name(affinity)})"
-)
+
+    msg = (
+        f"**일일 퀘스트 완료 - {member.display_name}**\n"
         f"{random.choice(complete_lines)}\n"
-        f"보상: HP +{reward.get('hp', 0)}, ATK +{reward.get('atk', 0)}, AGI +{reward.get('agi', 0)}
-"
+        f"보상: HP +{reward.get('hp', 0)}, ATK +{reward.get('atk', 0)}, AGI +{reward.get('agi', 0)}\n"
         f"호감도: {affinity} ({affinity_tier_name(affinity)})"
     )
 
-
+    await ctx.send(msg)
+    
 async def run_pvp_duel(ctx, challenger, target):
     duel_key = tuple(sorted([challenger.id, target.id]))
     active_duels[duel_key] = True
