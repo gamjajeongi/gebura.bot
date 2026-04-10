@@ -955,6 +955,21 @@ async def on_message(message):
 
     content = message.content.lower()
 
+    import random
+
+    MAIN_CHANNEL_ID = 1234567890
+    SPECIAL_CHANNEL_ID = 9876543210
+
+    if message.channel.id == MAIN_CHANNEL_ID:
+        chance = 3
+    elif message.channel.id == SPECIAL_CHANNEL_ID:
+        chance = random.randint(10, 15)
+    else:
+        chance = 1
+
+    if random.randint(1, 100) <= chance:
+        await message.channel.send("반응!", silent=True)
+        
     # 호드봇 반응
     if message.author.bot:
         if HORDE_BOT_ID != 0 and message.author.id == HORDE_BOT_ID:
