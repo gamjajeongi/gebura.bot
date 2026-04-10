@@ -957,12 +957,12 @@ async def on_message(message):
 
     import random
 
-    MAIN_CHANNEL_ID = 1234567890
-    SPECIAL_CHANNEL_ID = 9876543210
+    MAIN_CHANNEL_ID = 1393524135207899168
+    SPECIAL_CHANNEL_ID = 1491642430452400229
 
-    if message.channel.id == MAIN_CHANNEL_ID:1393524135207899168
+    if message.channel.id == MAIN_CHANNEL_ID:
         chance = 3
-    elif message.channel.id == SPECIAL_CHANNEL_ID:1491642430452400229
+    elif message.channel.id == SPECIAL_CHANNEL_ID:
         chance = random.randint(10, 15)
     else:
         chance = 1
