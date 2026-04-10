@@ -960,9 +960,9 @@ async def on_message(message):
     MAIN_CHANNEL_ID = 1234567890
     SPECIAL_CHANNEL_ID = 9876543210
 
-    if message.channel.id == MAIN_CHANNEL_ID:
+    if message.channel.id == MAIN_CHANNEL_ID:1393524135207899168
         chance = 3
-    elif message.channel.id == SPECIAL_CHANNEL_ID:
+    elif message.channel.id == SPECIAL_CHANNEL_ID:1491642430452400229
         chance = random.randint(10, 15)
     else:
         chance = 1
